@@ -32,6 +32,8 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
+import csv
+import os
 import sys
 
 import tensorflow as tf
@@ -69,12 +71,22 @@ def run_graph(wav_data, labels, input_layer_name, output_layer_name,
 
     # Sort to show labels in order of confidence
     top_k = predictions.argsort()[-num_top_predictions:][::-1]
-    for node_id in top_k:
-      human_string = labels[node_id]
-      score = predictions[node_id]
-      print('%s (score = %.5f)' % (human_string, score))
 
-    return 0
+    # for node_id in top_k:
+    #   human_string = labels[node_id]
+    #   score = predictions[node_id]
+      # print('%s (score = %.5f)' % (human_string, score))
+
+    # if csv_dir:
+    #   print_to_csv([wav_file.split('/')[-1], labels[top_k[0]]], csv_dir)
+    # print("Top K: ", top_k)
+    # print("Labels: ", labels[top_k[0]])
+    # print("Score: ", predictions[top_k[0]])
+
+    return labels[top_k[0]]
+
+
+
 
 
 def label_wav(wav, labels, graph, input_name, output_name, how_many_labels):
