@@ -10768,13 +10768,13 @@ def print_to_csv(data, csv_dir):
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     csvwriter.writerows(data)
 
-data_dir = '/Users/wcyn/projects/tensorflow_data/spectograms/test/audio'
-csv_dir = '/Users/wcyn/projects/tensorflow_data/spectograms/test_outputs.csv'
+data_dir = '/home/pi/tensorflow_data/spectograms/test/audio'
+csv_dir = '/home/pi/tensorflow_data/spectograms/test_outputs.csv'
 csv_headers = ['fname','label']
 
 image = data_dir
-graph = "/Users/wcyn/projects/tensorflow_data/spectograms/train/output_graph.pb"
-labels = "/Users/wcyn/projects/tensorflow_data/spectograms/train/output_labels.txt"
+graph = "/home/pi/tensorflow_data/spectograms/output_graph.pb"
+labels = "/home/pi/tensorflow_data/spectograms/output_labels.txt"
 
 print_to_csv(label_test_images(data_dir, graph, labels, csv_dir, csv_headers), csv_dir)
 
