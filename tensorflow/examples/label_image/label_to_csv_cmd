@@ -1,0 +1,4 @@
+python tensorflow/examples/label_image/label_image.py \
+--graph=/home/pi/tensorflow_data/spectograms/train/output_graph.pb \
+--labels=/home/pi/tensorflow_data/spectograms/train/output_labels.txt \
+--image=/home/pi/tensorflow_data/spectograms/sample/up/ff63ab0b_nohash_0.png
