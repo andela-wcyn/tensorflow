@@ -277,17 +277,17 @@ int main(int argc, char* argv[]) {
   // They define where the graph and input data is located, and what kind of
   // input the model expects. If you train your own model, or use something
   // other than inception_v3, then you'll need to update these.
-  string image = "tensorflow/examples/label_image/data/grace_hopper.jpg";
+  string image = "/Users/wcyn/projects/tensorflow_data/spectograms/sample/up/ffd2ba2f_nohash_4.png";
   string graph =
-      "tensorflow/examples/label_image/data/inception_v3_2016_08_28_frozen.pb";
+      "/Users/wcyn/projects/tensorflow_data/spectograms/train/output_graph.pb";
   string labels =
-      "tensorflow/examples/label_image/data/imagenet_slim_labels.txt";
+      "/Users/wcyn/projects/tensorflow_data/spectograms/train/output_labels.txt";
   int32 input_width = 299;
   int32 input_height = 299;
   float input_mean = 0;
   float input_std = 255;
-  string input_layer = "input";
-  string output_layer = "InceptionV3/Predictions/Reshape_1";
+  string input_layer = "Mul";
+  string output_layer = "final_result";
   bool self_test = false;
   string root_dir = "";
   std::vector<Flag> flag_list = {
