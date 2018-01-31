@@ -10748,7 +10748,7 @@ def label_test_images(data_dir, model_file, label_file, csv_dir=None,
         prepare_csv_file(csv_dir, csv_headers)
     count = 0
     for subdir, dirs, files in os.walk(data_dir):
-        for file in files[::-1]:
+        for file in files:
             # print(os.path.join(subdir, file))
             filepath = subdir + os.sep + file
             count += 1
